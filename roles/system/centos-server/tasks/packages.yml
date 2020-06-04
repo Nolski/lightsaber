@@ -1,0 +1,21 @@
+---
+- name: install/upgrade EPEL repository
+  package:
+    state: latest
+    name: epel-release
+
+- name: install base packages
+  package:
+    state: present
+    name:
+      - bash-completion
+      - fpaste
+      - golang
+      - htop
+      - jq
+      - pandoc
+      - podman
+      - rpmconf
+      - smartmontools
+      - strace
+      - which

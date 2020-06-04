@@ -1,0 +1,59 @@
+# HOSTS: Fedora Infrastructure
+Host bastion.fedoraproject.org
+    User jflory7
+    ProxyCommand none
+    ForwardAgent no
+Host *.phx2.fedoraproject.org *.qa.fedoraproject.org 10.5.125.* 10.5.126.* 10.5.127.* *.vpn.fedoraproject.org
+    User jflory7
+    ProxyCommand ssh -W %h:%p bastion.fedoraproject.org
+Host fedorapeople
+    HostName fedorapeople.org
+    User jflory7
+    ProxyCommand ssh -W %h:%p bastion.fedoraproject.org
+
+# HOSTS: Personal
+
+## Servers
+Host horizon
+    HostName horizon.jwf.io
+    User jflory
+Host intermission
+    HostName intermission.jwf.io
+    Port 60597
+    User jflory
+Host jubilee
+    HostName jubilee.jwf.io
+    User jwf
+
+## Workstations
+Host lucie
+    HostName 192.168.1.2
+    User jwf
+Host ginny
+    HostName 192.168.1.3
+    User jwf
+
+# HOSTS: Specific-purpose VMs
+Host irclo
+    Hostname vm205.documentfoundation.org
+    User jwf
+Host ircritlug
+    HostName irc-lug.rit.edu
+    User jflory
+
+# HOSTS: Rochester Institute of Technology
+Host banjo
+    HostName banjo.rit.edu
+    User jwf9260
+Host fossrit
+    HostName fossrit.community
+    User jflory
+Host saskia
+    ForwardAgent yes
+    HostName banjo.rit.edu
+    RemoteCommand ssh jwf@saskia.igm.rit.edu
+    RequestTTY force
+    User jwf9260
+Host serenity
+    HostName serenity.ist.rit.edu
+    User jwf9260
