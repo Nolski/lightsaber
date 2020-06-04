@@ -1,14 +1,14 @@
 ---
-- name: set up Justin's preferred Fedora Workstation configuration
+- name: set up Nolski's preferred Fedora Workstation configuration
   hosts: workstation
   become: yes
 
   vars:
     ansible_python_interpreter: /usr/bin/python3
-    target_group: jflory
-    target_user: jflory
-    target_user_name: Justin W. Flory
-    user_home_dir: /home/jflory
+    target_group: nolski
+    target_user: nolski
+    target_user_name: Mike Nolan
+    user_home_dir: /home/nolski
 
   roles:
     - { role: system/base, tags: ['base', 'system'] }
@@ -20,16 +20,11 @@
     - { role: apps/dunst, tags: ['dunst', 'desktop', 'apps'] }
     - { role: apps/gcloud-sdk, tags: ['google-cloud', 'devops', 'apps'] }
     - { role: apps/git, tags: ['git', 'terminal', 'apps'] }
-    - { role: apps/i3wm, tags: ['i3wm', 'desktop', 'apps'] }
-    - { role: apps/minecraft, apps: ['minecraft', 'desktop', 'apps'] }
     - { role: apps/npm, tags: ['npm', 'terminal', 'apps'] }
-    - { role: apps/pass, tags: ['pass', 'terminal', 'apps'] }
     - { role: apps/powerline-go, tags: ['powerline', 'terminal', 'apps'] }
-    - { role: apps/protonvpn, tags: ['protonvpn', 'terminal', 'apps'] }
     - { role: apps/slack, tags: ['slack', 'desktop', 'apps'] }
     - { role: apps/spotify, tags: ['spotify', 'desktop', 'apps'] }
     - { role: apps/ssh, tags: ['ssh', 'terminal', 'apps'] }
-    - { role: apps/sublime-text, tags: ['sublime-text', 'desktop', 'apps'] }
     - { role: apps/thunderbird, tags: ['thunderbird', 'desktop', 'apps'] }
     - { role: apps/tmux, tags: ['tmux', 'terminal', 'apps'] }
     - { role: apps/tor, tags: ['tor', 'desktop', 'apps'] }

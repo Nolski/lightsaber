@@ -43,7 +43,7 @@
     short-status = status -s
     sync-fork-master = !git pull upstream master && git push
 [commit]
-	gpgsign = true
+	gpgsign = false
 [core]
 	editor = vim
 [diff]
@@ -61,8 +61,7 @@
 [sendemail]
 	smtpencryption = tls
 [user]
-	name = Justin W. Flory
-	email = git@jwf.io
-	signingkey = 39E45FB6014131E4
+	name = Mike Nolan
+	email = me@michael-nolan.com
 [includeIf "gitdir:~/git/jump/"]
   path = .gitconfig-jump
