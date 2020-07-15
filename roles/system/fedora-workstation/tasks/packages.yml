@@ -38,9 +38,7 @@
   package:
     state: present
     name:
-      - https://dl.google.com/linux/direct/google-musicmanager-beta_current_x86_64.rpm
       - ansible
-      - arandr
       - asciidoctor
       - bash-completion
       - bat
@@ -50,7 +48,6 @@
       - brasero
       - brasero-nautilus
       - chromaprint-tools
-      - chromium
       - docker-compose
       - duply
       - epiphany
@@ -64,10 +61,6 @@
       - golang-godoc
       - google-roboto-slab-fonts
       - gparted
-      - gstreamer-ffmpeg
-      - gstreamer1-plugins-bad-free-extras
-      - gstreamer1-plugins-ugly
-      - hexchat
       - htop
       - inkscape
       - java-11-openjdk
@@ -77,6 +70,7 @@
       - libvirt-devel
       - lollypop
       - meld
+      - mosh
       - mpris-scrobbler
       - mpv
       - nautilus-dropbox
@@ -95,7 +89,6 @@
       - shotwell
       - smartmontools
       - strace
-      - telegram-desktop
       - typetype-molot-fonts
       - udftools
       - '@virtualization'
