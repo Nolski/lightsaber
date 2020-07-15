@@ -25,7 +25,6 @@
     - { role: apps/slack, tags: ['slack', 'desktop', 'apps'] }
     - { role: apps/spotify, tags: ['spotify', 'desktop', 'apps'] }
     - { role: apps/ssh, tags: ['ssh', 'terminal', 'apps'] }
-    - { role: apps/thunderbird, tags: ['thunderbird', 'desktop', 'apps'] }
     - { role: apps/tmux, tags: ['tmux', 'terminal', 'apps'] }
     - { role: apps/tor, tags: ['tor', 'desktop', 'apps'] }
     - { role: apps/vim, tags: ['vim', 'terminal', 'apps'] }
