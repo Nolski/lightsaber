@@ -13,3 +13,6 @@
     - org.kde.kdenlive
     - org.glimpse_editor.Glimpse
     - org.zotero.Zotero
+    - com.slack.Slack
+    - com.spotify.Client
+    - org.chromium.Chromium
