@@ -1,0 +1,52 @@
+---
+- name: enable sway repo
+  shell:
+    cmd: dnf module enable -y sway:rolling
+
+- name: install swaywm
+  package:
+    state: present
+    name:
+      - sway
+      - swaylock
+      - rofi # dmenu alternative
+      - wdisplays # arandr for wayland
+      - brightlight
+      - grim # image grabber (screenshots)
+      - slurp # area selector (screenshots)
+      - waybar
+      - wob
+      - gammastep # redshift
+
+- name: create sway user config directory
+  file:
+    state: directory
+    path: "{{ user_home_dir }}/.sway/"
+    group: "{{ target_user }}"
+    owner: "{{ target_user }}"
+
+- name: add sway user config files
+  copy:
+    src: "{{ role_path }}/files/{{ item }}"
+    dest: "{{ user_home_dir }}/.sway/{{ item }}"
+    group: "{{ target_user }}"
+    owner: "{{ target_user }}"
+  loop:
+    - config
+    - status.sh
+
+- name: create desktop background directory
+  file:
+    state: directory
+    path: "{{ user_home_dir }}/Pictures/desktop/"
+    group: "{{ target_user }}"
+    owner: "{{ target_user }}"
+
+- name: add desktop background pictures
+  copy:
+    src: "{{ role_path }}/files/{{ item }}"
+    dest: "{{ user_home_dir }}/Pictures/desktop/{{ item }}"
+    group: "{{ target_user }}"
+    owner: "{{ target_user }}"
+  loop:
+    - open-sourcerer.png
