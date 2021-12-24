@@ -1,11 +1,4 @@
 ---
-- name: add/upgrade RPM Fusion repositories
-  package:
-    state: latest
-    name:
-      - https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version }}.noarch.rpm
-      - https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ fedora_version }}.noarch.rpm
-
 - name: remove unused packages
   package:
     state: absent
@@ -43,20 +36,14 @@
       - bash-completion
       - bat
       - black
-      - blueman
       - bpftrace
       - brasero
       - brasero-nautilus
-      - chromaprint-tools
       - docker-compose
       - duply
       - epiphany
-      - exfat-utils
-      - f2fs-tools
       - feh
-      - ffmpeg
       - fpaste
-      - gnome-mahjongg
       - golang
       - golang-godoc
       - google-roboto-slab-fonts
@@ -64,16 +51,9 @@
       - htop
       - inkscape
       - java-11-openjdk
-      - jpegoptim
       - jq
-      - libvirt
-      - libvirt-devel
-      - lollypop
       - meld
       - mosh
-      - mpris-scrobbler
-      - mpv
-      - nautilus-dropbox
       - network-manager-applet
       - nodejs-yarn
       - overpass-fonts
@@ -89,6 +69,7 @@
       - shotwell
       - smartmontools
       - strace
+      - the_silver_searcher
       - typetype-molot-fonts
       - udftools
       - '@virtualization'
