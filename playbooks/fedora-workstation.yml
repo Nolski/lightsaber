@@ -27,4 +27,4 @@
     - { role: apps/tor, tags: ['tor', 'desktop', 'apps'] }
     - { role: apps/vim, tags: ['vim', 'terminal', 'apps'] }
     - { role: apps/swaywm, tags: ['sway', 'wm', 'apps'] }
-    - { role: apps/vscode, tags: ['visualstudio', 'editor', 'apps'] }
+
