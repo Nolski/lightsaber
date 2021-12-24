@@ -5,7 +5,6 @@
     state: present
     method: system
   loop:
-    - com.adobe.Flash-Player-Projector
     - im.riot.Riot
     - org.signal.Signal
     - us.zoom.Zoom
