@@ -10,3 +10,10 @@
     dest: "{{ user_home_dir }}/.tmux.conf"
     group: "{{ target_user }}"
     owner: "{{ target_user }}"
+
+- name: copy tmux.conf.local
+  copy:
+    src: "{{ role_path }}/files/tmux.conf.local"
+    dest: "{{ user_home_dir }}/.tmux.conf.local"
+    group: "{{ target_user }}"
+    owner: "{{ target_user }}"

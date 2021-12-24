@@ -1,0 +1,12 @@
+---
+- name: install/upgrade alacritty
+  package:
+    state: latest
+    name: alacritty
+
+- name: copy alacritty.yml
+  copy:
+    src: "{{ role_path }}/files/alacritty.yml"
+    dest: "{{ user_home_dir }}/.config/alacritty/alacritty.yml"
+    group: "{{ target_user }}"
+    owner: "{{ target_user }}"
