@@ -6,7 +6,13 @@
     method: system
   loop:
     - com.adobe.Flash-Player-Projector
-    - com.bluejeans.BlueJeans
     - im.riot.Riot
     - org.signal.Signal
     - us.zoom.Zoom
+    - com.discordapp.Discord
+    - org.kde.kdenlive
+    - org.glimpse_editor.Glimpse
+    - org.zotero.Zotero
+    - com.slack.Slack
+    - com.spotify.Client
+    - org.chromium.Chromium
