@@ -17,6 +17,7 @@
       - waybar
       - wob
       - gammastep # redshift
+      - mako # notification manager
 
 - name: create sway user config directory
   file:
