@@ -1,0 +1,19 @@
+---
+- name: Create themes folder
+  ansible.builtin.file:
+    state: directory
+    path: "{{ user_home_dir }}/.themes/"
+    group: "{{ target_user }}"
+    owner: "{{ target_user }}"
+    mode: '0755'
+
+- name: Clone Klaus (gruvbox dark) GTK theme
+  ansible.builtin.git:
+    repo: https://github.com/tsbarnes/Klaus.git
+    dest: "{{ user_home_dir }}/.themes/"
+
+- name: Set theme to be Klaus through gsettings
+  ansible.builtin.shell:
+    cmd: |
+      gsettings set org.gnome.desktop.interface gtk-theme "Klaus"
+      gsettings set org.gnome.desktop.wm.preferences theme "Klaus"
