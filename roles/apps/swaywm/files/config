@@ -212,6 +212,7 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+include colors
 #
 # Status Bar:
 #
@@ -224,9 +225,11 @@ bar {
     status_command while sh ~/.sway/status.sh; do sleep 1; done
 
     colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
+        statusline $base0B
+        background $base01
+        #                  border     background  text
+        inactive_workspace #32323200  32323200    $base0B
+        focused_workspace  #32323200  $base09     $base00
     }
 }
 
@@ -241,7 +244,6 @@ exec nm-applet --indicator
 
 # Basic color configuration using the Base16 variables for windows and borders.
 # Property Name         Border  BG      Text    Indicator Child Border
-include colors
 client.focused          $base0B $base01 $base05 $base0D $base03
 client.focused_inactive $base01 $base00 $base05 $base03 $base01
 client.unfocused        $base01 $base00 $base05 $base01 $base01
