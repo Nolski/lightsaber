@@ -49,7 +49,7 @@
   become: yes
   become_user: "{{ target_user }}"
   git:
-    repo: "git@github.com:jwflory/swiss-army.git"
+    repo: "git@github.com:nolski/lightsaber.git"
     dest: "{{ user_home_dir }}/git/swiss-army"
     accept_hostkey: yes
     update: no

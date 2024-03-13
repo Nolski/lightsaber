@@ -6,22 +6,6 @@
     group: "{{ target_group }}"
     owner: "{{ target_user }}"
 
-- name: clone/pull from remote github.com/jwflory/rpmbuild
-  become: yes
-  become_user: "{{ target_user }}"
-  git:
-    repo: git@github.com:jwflory/rpmbuild.git
-    dest: "{{ user_home_dir }}/git/fedora/rpms/rpmbuild"
-    version: HEAD
-
-- name: set symbolic link on system path to preferred path for RPM packaging
-  file:
-    src: "{{ user_home_dir }}/git/fedora/rpms/rpmbuild/rpmbuild"
-    dest: "{{ user_home_dir }}/rpmbuild"
-    state: link
-    group: "{{ target_group }}"
-    owner: "{{ target_user }}"
-
 - name: install Fedora packaging tools
   package:
     state: present

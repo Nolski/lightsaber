@@ -8,7 +8,7 @@
     - podman
 
 # gids/uids required for podman rootless mode
-# https://github.com/jwflory/swiss-army/issues/11
+# https://gitlab.com/jwflory/swiss-army/issues/11
 - name: set multiple gids for target user
   lineinfile:
     path: "/etc/subgid"
