@@ -10,3 +10,4 @@
     state: present
     method: system
     flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+
