@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="734"
+   height="136"
+   viewBox="0 0 734 136"
+   sodipodi:docname="logo.svg"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="2.3119077"
+     inkscape:cx="167.17795"
+     inkscape:cy="151.6064"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g1"
+     showgrid="true">
+    <inkscape:grid
+       id="grid1"
+       units="px"
+       originx="0"
+       originy="0"
+       spacingx="1"
+       spacingy="1"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       dotted="false"
+       gridanglex="30"
+       gridanglez="30"
+       visible="true" />
+  </sodipodi:namedview>
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Image"
+     id="g1">
+    <rect
+       style="fill:#f9f9f9"
+       id="rect2"
+       width="733.69696"
+       height="136.93791"
+       x="-0.13124579"
+       y="-0.22301304" />
+    <path
+       style="fill:#000000;stroke-width:0.302499"
+       d="m 19.948496,83.414163 c 0.85879,-5.91764 1.59055,-8.2549 3.03748,-9.70183 l 1.0369,-1.0369 h 3.47056 3.47055 l -0.87696,1.21061 c -3.42107,4.72265 -3.28225,27.061957 0.19384,31.193057 l 0.73311,0.87125 h -3.48236 c -3.46805,0 -3.48611,-0.004 -4.39232,-0.90995 -1.04209,-1.04209 -2.01996,-3.43824 -2.65318,-6.501277 -0.42528,-2.05718 -0.82049,-13.17581 -0.53762,-15.12496 z m 13.9061,-3.9697 c 0.42978,-2.55807 1.33516,-5.3247 2.07259,-6.33337 0.41946,-0.57376 1.16837,-0.5888 33.42595,-0.67153 l 32.996874,-0.0846 v -0.74726 c 0,-0.74722 1.1e-4,-0.74725 3.17624,-0.74725 h 3.17624 v 17.82271 c 0,9.80249 0.0826,18.038037 0.18362,18.301197 0.16059,0.41851 -0.23492,0.47849 -3.15521,0.47849 -3.23216,0 -3.3419,-0.0217 -3.43548,-0.68062 l -0.0967,-0.68062 -32.943044,-0.077 c -23.68567,-0.0553 -33.05729,-0.17178 -33.34958,-0.41436 -0.54612,-0.45324 -1.49305,-3.59728 -2.06053,-6.841477 -0.60017,-3.43105 -0.59444,-15.73264 0.009,-19.32432 z m 81.803034,-8.58402 h 3.02734 v 2.11749 2.1175 h 2.87374 2.87374 l -0.007,1.58812 c -0.004,0.88095 -0.25376,2.13213 -0.5616,2.80983 -0.6486,1.42789 -2.99008,3.59507 -4.45753,4.1257 l -1.0242,0.37036 v 5.23142 5.23142 l 1.28719,0.60505 c 1.57961,0.74251 3.62188,2.68142 4.27577,4.0594 0.26786,0.56447 0.48702,1.720397 0.48702,2.568717 v 1.5424 h -2.87374 -2.87374 v 2.2797 2.2797 l -2.94937,-0.0866 -2.94937,-0.0866 -0.078,-18.376817 -0.078,-18.37683 z m 19.62955,4.23499 h 2.75774 v -1.17219 c 0,-1.07084 0.0817,-1.18852 0.94531,-1.36124 0.51992,-0.10399 3.92303,-0.18906 7.56248,-0.18906 h 6.61717 v 9.37747 9.37748 h 0.9075 0.90749 v -9.22623 -9.22623 h 2.7225 2.72249 v 1.96915 1.96916 l 14.59559,-0.0785 14.59558,-0.0785 0.0866,-2.94936 0.0866,-2.94944 h 9.36652 9.36652 v 5.89873 5.89874 H 184.47859 160.4299 v 5.44499 5.44498 h 24.04869 24.04868 v 7.415597 7.4156 l -9.30185,-0.08 -9.30185,-0.08 -0.087,-2.79812 -0.087,-2.79811 h -14.65986 -14.65986 v 1.81499 1.815 h -2.72249 -2.7225 v -2.7225 -2.72249 h -0.90749 -0.9075 v 2.72249 2.7225 h -7.56248 -7.56248 v -1.36125 -1.36125 h -2.76427 -2.76427 l 0.20803,-2.03043 c 0.12037,-1.17488 0.46151,-2.440597 0.80962,-3.003837 0.69323,-1.12167 2.44193,-2.72796 3.48937,-3.20521 0.71781,-0.32705 0.71902,-0.33666 0.71902,-5.70984 v -5.38224 l -1.05465,-0.50046 c -2.3815,-1.1301 -3.82982,-3.43327 -4.03071,-6.40978 l -0.12761,-1.89062 z"
+       id="path1" />
+    <text
+       xml:space="preserve"
+       style="font-size:48.9608px;fill:#000000;stroke-width:4.08007"
+       x="22.408092"
+       y="60.337788"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         x="22.408092"
+         y="60.337788"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Oswald;-inkscape-font-specification:Oswald;stroke-width:4.08007">Lightsaber</tspan></text>
+    <rect
+       style="fill:#ffcc00;stroke-width:1.0178"
+       id="rect1"
+       width="497.55148"
+       height="33.199791"
+       x="213.61546"
+       y="72.695885" />
+  </g>
+</svg>
