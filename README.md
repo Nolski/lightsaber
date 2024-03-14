@@ -1,4 +1,4 @@
-![Lightsaber logo](https://github.com/nolski/lightsaber/blob/master/logo.svg?raw=true)
+![Lightsaber logo](https://github.com/nolski/lightsaber/blob/master/logo.png?raw=true)
 
 [![License: BSD 3-Clause License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 [![Build Status](https://travis-ci.org/jwflory/swiss-army.svg?branch=master)](https://travis-ci.org/jwflory/swiss-army)
