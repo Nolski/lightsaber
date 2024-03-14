@@ -1,7 +1,6 @@
 ![Lightsaber logo](https://github.com/nolski/lightsaber/blob/master/logo.png?raw=true)
 
 [![License: BSD 3-Clause License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-[![Build Status](https://travis-ci.org/jwflory/swiss-army.svg?branch=master)](https://travis-ci.org/jwflory/swiss-army)
 
 Lightsaber has been adopted by Justin Flory's [Swiss Army Toolkit](https://gitlab.com/jwflory/swiss-army/). It's an ansible-driven configuration management for maintaining a preferred environment (base system and app configurations)
 
