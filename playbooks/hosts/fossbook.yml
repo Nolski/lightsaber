@@ -16,10 +16,7 @@
     - { role: system/python, tags: ['python', 'system'] }
     - { role: system/ruby, tags: ['ruby', 'system'] }
     - { role: apps/bash, tags: ['bash', 'terminal', 'apps'] }
-    - { role: apps/dunst, tags: ['dunst', 'desktop', 'apps'] }
-    - { role: apps/gcloud-sdk, tags: ['google-cloud', 'devops', 'apps'] }
     - { role: apps/git, tags: ['git', 'terminal', 'apps'] }
-    - { role: apps/minecraft, apps: ['minecraft', 'desktop', 'apps'] }
     - { role: apps/npm, tags: ['npm', 'terminal', 'apps'] }
     - { role: apps/powerline-go, tags: ['powerline', 'terminal', 'apps'] }
     - { role: apps/slack, tags: ['slack', 'desktop', 'apps'] }
@@ -27,5 +24,4 @@
     - { role: apps/ssh, tags: ['ssh', 'terminal', 'apps'] }
     - { role: apps/thunderbird, tags: ['thunderbird', 'desktop', 'apps'] }
     - { role: apps/tmux, tags: ['tmux', 'terminal', 'apps'] }
-    - { role: apps/tor, tags: ['tor', 'desktop', 'apps'] }
     - { role: apps/vim, tags: ['vim', 'terminal', 'apps'] }
