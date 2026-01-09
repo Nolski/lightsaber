@@ -1,0 +1,48 @@
+---
+- name: check if cursor is already installed
+  ansible.builtin.command: rpm -q cursor
+  register: cursor_installed
+  failed_when: false
+  changed_when: false
+
+- name: extract latest cursor rpm download url
+  ansible.builtin.shell: |
+    python3 << 'PYTHON_EOF'
+    import re
+    import urllib.request
+    with urllib.request.urlopen('https://cursor.com/download') as response:
+        content = response.read().decode('utf-8')
+    pattern = r'https://api2\.cursor\.sh/updates/download/golden/linux-x64-rpm/cursor/[^"\s]+'
+    matches = re.findall(pattern, content)
+    if matches:
+        print(matches[0])
+    PYTHON_EOF
+  register: cursor_rpm_url_result
+  changed_when: false
+  when: cursor_installed.rc != 0
+
+- name: set cursor rpm url fact
+  ansible.builtin.set_fact:
+    cursor_rpm_url: "{{ cursor_rpm_url_result.stdout }}"
+  when: cursor_installed.rc != 0
+
+- name: download cursor rpm
+  ansible.builtin.get_url:
+    url: "{{ cursor_rpm_url }}"
+    dest: /tmp/cursor.rpm
+    mode: '0644'
+    follow_redirects: all
+  when: cursor_installed.rc != 0
+
+- name: install cursor
+  ansible.builtin.rpm:
+    name: /tmp/cursor.rpm
+    state: present
+  become: true
+  when: cursor_installed.rc != 0
+
+- name: remove cursor rpm file
+  ansible.builtin.file:
+    path: /tmp/cursor.rpm
+    state: absent
+  when: cursor_installed.rc != 0
