@@ -4,13 +4,27 @@
     name: golang-bin
     state: present
 
-- name: install golang package - powerline-go
-  # COOL EXAMPLE: Must use shell module over command module since GOPATH is
-  # found in user's bash_profile. This is used for a custom path for Go
-  # package binaries.
+- name: create GOPATH directory structure
   become: true
   become_user: "{{ target_user }}"
-  shell: "go install github.com/justjanne/powerline-go@latest"
+  file:
+    path: "{{ user_home_dir }}/wkspc/go/bin"
+    state: directory
+    mode: '0755'
+
+- name: install golang package - powerline-go
+  # Install powerline-go using go install. GOPATH must be set to match
+  # the value in bash_profile ($HOME/wkspc/go) so the binary is installed
+  # to the correct location expected by bashrc.
+  become: true
+  become_user: "{{ target_user }}"
+  shell: |
+    export GOPATH={{ user_home_dir }}/wkspc/go
+    export PATH=$PATH:$GOPATH/bin
+    go install github.com/justjanne/powerline-go@latest
   args:
     creates: "{{ user_home_dir }}/wkspc/go/bin/powerline-go"
+  environment:
+    GOPATH: "{{ user_home_dir }}/wkspc/go"
+    PATH: "{{ ansible_env.PATH }}:{{ user_home_dir }}/wkspc/go/bin"
 
