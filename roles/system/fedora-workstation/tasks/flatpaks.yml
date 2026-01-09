@@ -5,7 +5,6 @@
     state: present
     method: system
   loop:
-    - im.riot.Riot
     - org.signal.Signal
     - us.zoom.Zoom
     - com.discordapp.Discord
@@ -16,3 +15,4 @@
     - com.spotify.Client
     - org.chromium.Chromium
     - org.mozilla.Thunderbird
+    - md.obsidian.Obsidian
