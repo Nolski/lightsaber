@@ -204,3 +204,4 @@ tags
 # Persistent undo
 [._]*.un~
 .cursor/
+__pycache__

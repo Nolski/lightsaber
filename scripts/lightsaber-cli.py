@@ -9,6 +9,7 @@ import sys
 import json
 import subprocess
 import argparse
+import time
 from pathlib import Path
 from typing import List, Dict, Optional
 
@@ -25,7 +26,8 @@ class Colors:
     OKBLUE = '\033[94m'
     OKCYAN = '\033[96m'
     OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
+    WARNING = '\033[93m'  # Yellow
+    YELLOW = '\033[93m'
     FAIL = '\033[91m'
     ENDC = '\033[0m'
     BOLD = '\033[1m'
@@ -52,6 +54,132 @@ def print_error(text: str):
 def print_info(text: str):
     """Print info message"""
     print(f"{Colors.OKCYAN}ℹ{Colors.ENDC} {text}")
+
+
+def animate_lightsaber():
+    """Display an animated lightsaber turning on with LIGHTSABER text"""
+    lightsaber_text = """
+| |   |_ _/ ___| | | |_   _/ ___|  / \\  | __ )| ____|  _ \\ 
+| |    | | |  _| |_| | | | \\___ \\ / _ \\ |  _ \\|  _| | |_) |
+| |___ | | |_| |  _  | | |  ___) / ___ \\| |_) | |___|  _ < 
+|_____|___\\____|_| |_| |_| |____/_/   \\_\\____/|_____|_| \\_\\
+"""
+    
+    frames = [
+        """
+   ▁▁▁▁▁▁▁▁▁▁▁▁▁
+  |▍░▐░░▣░▒░▒░▒▕|
+   ▔▔▔▔▔▔▔▔▔▝▔▔▔
+""",
+        """
+   ▁▁▁▁▁▁▁▁▁▁▁▁▁ ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+  |▍░▐░░▣░▒░▒░▒▕|             ▌
+   ▔▔▔▔▔▔▔▔▔▝▔▔▔ ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+""",
+        """
+   ▁▁▁▁▁▁▁▁▁▁▁▁▁ ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+  |▍░▐░░▣░▒░▒░▒▕|                                       ▌
+   ▔▔▔▔▔▔▔▔▔▝▔▔▔ ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+""",
+        """
+   ▁▁▁▁▁▁▁▁▁▁▁▁▁ ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+  |▍░▐░░▣░▒░▒░▒▕|                                                                ▌
+   ▔▔▔▔▔▔▔▔▔▝▔▔▔ ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔
+""",
+    ]
+    
+    def color_blade(frame_str, color_code):
+        """Color the blade parts of the lightsaber (extending parts)"""
+        lines = frame_str.strip().split('\n')
+        colored_lines = []
+        for line in lines:
+            if not line.strip():
+                colored_lines.append(line)
+                continue
+            
+            # Line 2: Handle line - color the ▌ blade tip at the end
+            elif line.startswith('  |▍░▐░░▣░▒░▒░▒▕|'):
+                if '▌' in line:
+                    # Find the ▌ and color it
+                    parts = line.rsplit('▌', 1)
+                    if len(parts) == 2:
+                        colored_lines.append(parts[0] + color_code + '▌' + Colors.ENDC + parts[1])
+                    else:
+                        colored_lines.append(line)
+                else:
+                    colored_lines.append(line)
+            # Line 3: Bottom blade line - handle is '   ▔▔▔▔▔▔▔▔▔▝▔▔▔', blade starts after space
+            elif line.startswith('   ▔▔▔▔▔▔▔▔▔▝▔▔▔'):
+                handle = '   ▔▔▔▔▔▔▔▔▔▝▔▔▔'
+                if len(line) > len(handle) and line[len(handle)] == ' ':
+                    # Find where blade actually starts (after handle and space)
+                    blade_start = len(handle) + 1
+                    handle_part = line[:blade_start]
+                    blade_part = line[blade_start:]
+                    colored_lines.append(handle_part + color_code + blade_part + Colors.ENDC)
+                else:
+                    colored_lines.append(line)
+            else:
+                colored_lines.append(line)
+        
+        return '\n'.join(colored_lines) + '\n'
+    
+    # Clear screen (optional - works on most terminals)
+    sys.stdout.write('\033[2J\033[H')
+    sys.stdout.flush()
+    
+    # Display the LIGHTSABER text in yellow/bold
+    print(f"{Colors.BOLD}{Colors.YELLOW}{lightsaber_text}{Colors.ENDC}")
+    
+    # Animate the lightsaber turning on (blade extending)
+    yellow_bold = f"{Colors.BOLD}{Colors.YELLOW}"
+    yellow_normal = Colors.YELLOW
+    
+    # Number of lines in each frame (3 lines)
+    frame_line_count = 3
+    
+    def draw_frame(frame_str, color_code):
+        """Draw a frame, clearing previous content"""
+        colored_frame = color_blade(frame_str, color_code)
+        lines = colored_frame.rstrip('\n').split('\n')
+        
+        # Draw each line, clearing to end of line first
+        for line in lines:
+            sys.stdout.write('\r')  # Return to start of line
+            sys.stdout.write('\033[K')  # Clear to end of line
+            sys.stdout.write(line)  # Write the line
+            sys.stdout.write('\n')  # Move to next line
+        sys.stdout.flush()
+    
+    for i, frame in enumerate(frames):
+        # Move cursor up to overwrite the previous lightsaber frame (but keep the text)
+        if i > 0:
+            # Move up by the number of lines in the frame
+            sys.stdout.write(f'\033[{frame_line_count}A')
+            sys.stdout.flush()
+        
+        # Draw the frame (will clear and redraw in place)
+        draw_frame(frame, yellow_bold)
+        
+        if i < len(frames) - 1:
+            time.sleep(0.15)  # Animation delay
+    
+    # Add a final glow effect (flicker)
+    for _ in range(2):
+        time.sleep(0.1)
+        # Move up to the start of the lightsaber frame
+        sys.stdout.write(f'\033[{frame_line_count}A')
+        sys.stdout.flush()
+        # Bright glow (bold yellow)
+        draw_frame(frames[-1], yellow_bold)
+        time.sleep(0.1)
+        # Move up again
+        sys.stdout.write(f'\033[{frame_line_count}A')
+        sys.stdout.flush()
+        # Normal glow (regular yellow)
+        draw_frame(frames[-1], yellow_normal)
+    
+    print("\n" * 2)  # Final spacing
 
 
 def print_menu(items: List[tuple], title: Optional[str] = None):
@@ -214,7 +342,8 @@ def run_ansible_playbook(playbook: str, tags: Optional[List[str]] = None,
 
 def interactive_mode():
     """Interactive menu-driven mode"""
-    print_header("Lightsaber CLI - Ansible Workflow Runner")
+    # Display animated lightsaber
+    animate_lightsaber()
     
     while True:
         # Main menu
