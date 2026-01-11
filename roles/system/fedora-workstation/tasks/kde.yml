@@ -1,0 +1,35 @@
+---
+- name: install konsave
+  ansible.builtin.pip:
+    name: konsave
+    state: present
+    executable: pip3
+
+- name: create konsave profiles directory
+  become: true
+  become_user: "{{ target_user }}"
+  file:
+    path: "{{ user_home_dir }}/.config/konsave/profiles"
+    state: directory
+    mode: '0755'
+
+- name: copy KDE settings profile
+  become: true
+  become_user: "{{ target_user }}"
+  copy:
+    src: my-kde-desktop.knsv
+    dest: "{{ user_home_dir }}/.config/konsave/profiles/my-kde-desktop.knsv"
+    mode: '0644'
+
+- name: restore KDE settings profile using konsave
+  become: true
+  become_user: "{{ target_user }}"
+  ansible.builtin.shell: |
+    konsave -r my-kde-desktop
+  args:
+    creates: "{{ user_home_dir }}/.config/kdeglobals"
+  environment:
+    HOME: "{{ user_home_dir }}"
+    USER: "{{ target_user }}"
+    XDG_CONFIG_HOME: "{{ user_home_dir }}/.config"
+    XDG_DATA_HOME: "{{ user_home_dir }}/.local/share"

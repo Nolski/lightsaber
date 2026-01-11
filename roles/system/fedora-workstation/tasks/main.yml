@@ -6,3 +6,4 @@
 - include_tasks: theme.yml
 - include_tasks: displaylink.yml
 - include_tasks: cursor.yml
+- include_tasks: kde.yml
